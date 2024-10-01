@@ -1,0 +1,48 @@
+﻿@using TravelTripProje.Models.Sınıflar
+@model List<iletisim>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <body>
+
+        <link href="~/web2/css/bootstrap.css" rel='stylesheet' type='text/css' />
+        <link href="~/web2/css/style.css" rel='stylesheet' type='text/css' />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="keywords" content="Personal Blog Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+        <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+        <script type="text/javascript">
+            jQuery(document).ready(function ($) {
+                $(".scroll").click(function (event) {
+                    event.preventDefault();
+                    $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 900);
+                });
+            });
+        </script>
+
+
+</head>
+
+<BR />
+<div class="content-form">
+    <h3 style="text-align:center">BİZİMLE İLETİŞİME GEÇİN</h3>
+    <form>
+        <input type="text" placeholder="AdSoyad" required />
+        <input type="text" placeholder="Mail Adresi" required />
+        <input type="text" placeholder="Konu" required />
+        <textarea placeholder="Mesaj"></textarea>
+        <input type="submit" value="GÖNDER" />
+    </form>
+</div>
+
+
+</html>
+</body>

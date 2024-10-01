@@ -1,0 +1,116 @@
+﻿
+@model TravelTripProje.Models.Sınıflar.BlogYorum
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+
+    <link href="~/web2/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="~/web2/css/style.css" rel='stylesheet' type='text/css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Personal Blog Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 900);
+            });
+        });
+    </script>
+
+
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+
+            <div class="clearfix"></div>
+            <script>
+                $("span.menu").click(function () {
+                    $(".top-menu ul").slideToggle("slow", function () {
+                    });
+                });
+            </script>
+
+        </div>
+    </div>
+
+
+
+    <div class="single">
+        <div class="container">
+            <div class="col-md-8 single-main">
+                @foreach (var x in Model.Deger1)
+                {
+
+
+                    <div class="single-grid">
+                        <img src="@x.BlogImage" alt="" style="margin-bottom:10px" height="300" />
+                        <a href="/Blog/BlogDetay/@x.ID" style="font-weight:bolder">@x.Baslik </a>
+
+                    </div>
+
+
+
+                }
+            </div>
+
+            <div class="col-md-4 side-content">
+                <div class="recent">
+                    <h3>SON EKLENEN 3 BLOG</h3>
+                    @foreach (var y in Model.Deger3)
+                    {
+
+
+                        <ul>
+                            <li><a href="/Blog/BlogDetay/@y.ID">@y.Baslik</a></li>
+
+                        </ul>
+                    }
+                </div>
+                
+
+
+            </div>
+            <div class="clearfix"></div>
+
+
+        </div>
+    </div>
+    <div>
+
+        <br />
+        <img src="~/web2/images/avatar.png" class="img-responsive" alt="">
+        <br />
+        <div class="desc">
+
+        </div>
+
+        <div class="clearfix"></div>
+        <div class="content-form">
+            <h3>BİR YORUM YAP</h3>
+            <form>
+                <input type="text" placeholder="Kullanıcı Adı" required />
+                <input type="text" placeholder="Mail Adresi" required />
+                <textarea placeholder="Yorum"></textarea>
+                <input type="submit" value="GÖNDER" />
+            </form>
+        </div>
+        
+
+    </div>
+
+
+
+
+</body>
+</html>

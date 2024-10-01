@@ -1,0 +1,98 @@
+﻿@using TravelTripProje.Models.Sınıflar
+@model List<Yorumlar>
+@{
+    ViewBag.Title = "YorumListesi";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<!doctype html>
+<html lang="tr">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+
+</head>
+<body>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+<br />
+
+<h2 style="text-align:center">YORUM LİSTESİ</h2>
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: center;
+            padding: 8px;
+        }
+
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+    <table style="text-align:center">
+        <tr>
+            <th>ID</th>
+            <th>KULLANICI ADI</th>
+            <th>MAIL</th>
+            <th>YORUM</th>
+            <th>BLOG</th>
+            <th>SİL</th>
+            <th>GÜNCELLE</th>
+        </tr>
+        @foreach (var x in Model)
+        {
+
+
+            <tr>
+                <td>@x.ID</td>
+                <td>@x.KullaniciAdi</td>
+                <td>@x.Mail</td>
+                <td>@x.Yorum</td>
+                <td>@x.Blog.Baslik</td>
+                <td><a href="/Admin/YorumSil/@x.ID" class="btn btn-danger">SİL</a></td>
+                <td><a href="/Admin/YorumGetir/@x.ID" class="btn btn-info">GÜNCELLE</a></td>
+                
+
+            </tr>
+
+        }
+
+
+
+
+
+    </table>
+    <br />
+
+    
+</body>
+</html>
+
+
+
